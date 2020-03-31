@@ -1,0 +1,10 @@
+attrs
+ipython
+jupyterlab
+pandas
+seaborn
+plotly
+dash
+scipy
+wheel
+nbdev
