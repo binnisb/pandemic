@@ -5,47 +5,48 @@ __all__ = ['SIR']
 # Cell
 import attr
 import pandas as pd
+import numpy as np
 from scipy.integrate import solve_ivp
 import seaborn as sns
 sns.set(style="ticks")
 
 @attr.s
 class SIR(object):
-    N = attr.ib(type=int)
-    b = attr.ib(type=float)
-    g = attr.ib(type=float)
+    N = attr.ib(converter=int)
+    I = attr.ib(converter=float)
+    beta = attr.ib(converter=float)
+    gamma = attr.ib(converter=float)
+    days = attr.ib(converter=int, default=200)
 
+    S = attr.ib(init=False, converter=float)
 
-    S = attr.ib(init=False, type=float)
-    I = attr.ib(type=float)
-    R = attr.ib(init=False, type=float, default=0)
-    t = attr.ib(init=False, type=int, default=0)
+    R = attr.ib(init=False, converter=float, default=0.0)
 
 
     def __attrs_post_init__(self):
         self.S = self.N - self.I - self.R
 
 
-    @classmethod
-    def ode(cls, t, y, b, g, N):
+    @staticmethod
+    def ode(t, y, beta, gamma, N):
         S, I, R = y
 
-        new_cases = b*S*I/N
-        removed_cases = g*I
-        S = round(-new_cases)
-        I = round(new_cases - removed_cases)
-        R = round(removed_cases)
+        new_cases = beta*S*I/N
+        removed_cases = gamma*I
+        S = -new_cases
+        I = new_cases - removed_cases
+        R = removed_cases
 
         y = (S,I,R)
 
         return y
 
-    def solve_days(self, days=200):
+    def solve_days(self):
         y = (self.S, self.I, self.R)
-        return solve_ivp(SIR.ode, [0,days], y, args=(self.b, self.g, self.N))
+        return solve_ivp(SIR.ode, [0,self.days], y,t_eval=np.arange(0,self.days), args=(self.beta, self.gamma, self.N))
 
 
-    def plot(self, days=200):
-        sol = self.solve_days(days)
+    def plot(self):
+        sol = self.solve_days()
         df_sol = pd.DataFrame(sol.y.T, index=sol.t, columns=["S","I","R"])
         sns.lineplot(data=df_sol)
