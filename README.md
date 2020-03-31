@@ -11,8 +11,8 @@ pip install .
 ```
 
 ```python
-model = SIR(N=5000,I=6, b=0.3, g=0.1)
-model.plot(days=200)
+model = SIR(N=5000,I=6, beta=0.3, gamma=0.1, days=100)
+model.plot()
 ```
 
 

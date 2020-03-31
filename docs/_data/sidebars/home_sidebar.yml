@@ -10,7 +10,7 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Pandemic model
+      title: Models
       url: /models
     output: web
     title: pandemic
