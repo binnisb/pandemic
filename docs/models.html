@@ -31,6 +31,29 @@ description: "SIR etc"
     
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-08683c5250c8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">import</span> attr
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">import</span> pandas <span class="ansi-green-fg">as</span> pd
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> scipy<span class="ansi-blue-fg">.</span>integrate <span class="ansi-green-fg">import</span> solve_ivp
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">import</span> seaborn <span class="ansi-green-fg">as</span> sns
+<span class="ansi-green-intense-fg ansi-bold">      6</span> sns<span class="ansi-blue-fg">.</span>set<span class="ansi-blue-fg">(</span>style<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;ticks&#34;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;scipy&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -46,6 +69,52 @@ description: "SIR etc"
 
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="SIR" class="doc_header"><code>class</code> <code>SIR</code><a href="https://github.com/binnisb/pandemic/tree/master/pandemic/models.py#L13" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SIR</code>(<strong><code>N</code></strong>:<code>int</code>, <strong><code>b</code></strong>:<code>float</code>, <strong><code>g</code></strong>:<code>float</code>, <strong><code>I</code></strong>:<code>float</code>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="SIR.ode" class="doc_header"><code>SIR.ode</code><a href="https://github.com/binnisb/pandemic/tree/master/pandemic/models.py#L29" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>SIR.ode</code>(<strong><code>t</code></strong>, <strong><code>y</code></strong>, <strong><code>b</code></strong>, <strong><code>g</code></strong>, <strong><code>N</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="SIR.solve_days" class="doc_header"><code>SIR.solve_days</code><a href="https://github.com/binnisb/pandemic/tree/master/pandemic/models.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>SIR.solve_days</code>(<strong><code>days</code></strong>=<em><code>200</code></em>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="SIR.plot" class="doc_header"><code>SIR.plot</code><a href="https://github.com/binnisb/pandemic/tree/master/pandemic/models.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>SIR.plot</code>(<strong><code>days</code></strong>=<em><code>200</code></em>)</p>
 </blockquote>
 
 </div>
